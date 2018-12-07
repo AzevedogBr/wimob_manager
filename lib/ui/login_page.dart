@@ -1,71 +1,86 @@
 import 'package:flutter/material.dart';
+import 'package:wimob_manager/ui/home_page.dart';
 
-class Login extends StatefulWidget {
+class LoginPage extends StatefulWidget {
+  static String tag = 'login-page';
+
   @override
-  _LoginState createState() => _LoginState();
+  _LoginPageState createState() => new _LoginPageState();
 }
 
-class _LoginState extends State<Login> {
-//  final TextEditingController _cnpjController = new TextEditingController() ;
- // final TextEditingController _idController = new TextEditingController();
+class _LoginPageState extends State<LoginPage> {
+  final TextEditingController _cnpjController = new TextEditingController();
+
+  final TextEditingController _idController = new TextEditingController();
+  String usuario = "";
 
   // criar metodo para os campos
+
+  void mostra_Usuario() {
+    usuario = '${_idController.text}';
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-//      appBar: AppBar(
-//        title: Text("Login"),
-//        backgroundColor: Colors.teal.shade900,
-//      ),
-      body:  Container(
-        alignment: Alignment.center,
-        color: Colors.white,
-        child: ListView(
+      backgroundColor: Colors.white,
+
+      body: new Center(
+        child: new Wrap(
+          //mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-           // logo wibi tela login
-            Image.asset("assets/ic_launcher.png",
-            width: 192.0,
-             height: 192.0,
-           ),
+            // logo wibi tela login
 
             Row(
-
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
-                Text("WiMobi Manager",
-                  style: TextStyle(
-                    fontSize: 35.0,
-                    fontFamily: 'righteous_regular',
-                    fontWeight: FontWeight.w200,
-                    color: Colors.teal.shade900
-                  ),
+                Image.asset(
+                  "assets/logo.png",
+                  width: 192.0,
+                  height: 192.0,
+                ),
+              ],
+            ),
 
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                Text(
+                  "WiMobi Manager",
+                  style: TextStyle(
+                      fontSize: 35.0,
+                      fontFamily: 'righteous_regular',
+                      fontWeight: FontWeight.w200,
+                      color: Colors.teal.shade900),
                 ),
               ],
             ),
             // campos login
-           Container(
-             width: double.infinity,
-             color: Colors.white,
-             child: Column(
-               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            Container(
+              width: double.infinity,
+              color: Colors.white,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
                   TextField(
-                   // controller: _cnpjController ,
+                    controller: _cnpjController,
                     decoration: InputDecoration(
-                      hintText: 'Digite o Cnpj',
-                      prefixIcon: Icon(Icons.person)
-
-                    ),
-
+                        hintText: 'Digite o Cnpj',
+                        prefixIcon: Icon(Icons.person)),
                   )
-
                 ],
+              ),
+            ),
 
-             ),
+        //linha divisoria
 
-           ),
+//            Padding(
+//              padding: const EdgeInsets.all(5.0),
+//              child: Container(
+//                height: 0.1,
+//                color: Colors.black,
+//              ),
+//            ),
 
             Container(
               width: double.infinity,
@@ -74,70 +89,50 @@ class _LoginState extends State<Login> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
                   TextField(
-                  //  controller: _idController ,
+                    controller: _idController,
                     decoration: InputDecoration(
                         hintText: 'Digite o ID',
-                        prefixIcon: Icon(Icons.vpn_key)
-
-                    ),
-
+                        prefixIcon: Icon(Icons.vpn_key)),
                   ),
-
                 ],
-
               ),
-
             ),
-
 
             Container(
               height: 50.0,
+              width: double.infinity,
               decoration: BoxDecoration(
-                  gradient: LinearGradient(
+                gradient: LinearGradient(
                   colors: [
-                    Colors.teal.shade900,
-                    Colors.teal.shade700,
+                    const Color(0xFF0a4142),
+//                      Colors.teal.shade900,
+                    Colors.teal.shade800,
                   ],
                   begin: FractionalOffset.bottomLeft,
                   end: FractionalOffset.bottomRight,
                 ),
               ),
               child: new FlatButton(
-
-                  child: Text(
-                    "Entrar",
-                    style: TextStyle(
-                      color: Colors.white
-                    ),
-                  ),
-                  onPressed: () {
-                    print('Clicked');
-                  }
+                child: Text(
+                  "Entrar",
+                  style: TextStyle(color: Colors.white),
+                ),
+                onPressed: () {
+                  _navigateToHome_page(context);
+                },
               ),
             ),
-
-
-//            new MaterialButton(
-//             // buttonColorGradient: [ Colors.teal.shade100, Colors.teal.shade900 ],
-//              height: 50.0,
-//              minWidth: 70.0,
-//              color: Colors.teal.shade900,
-//              //textColor: Colors.white,
-//              child: new Text("Entrar",
-//              style: TextStyle(
-//                color: Colors.white, fontSize: 15.0
-//              ),
-//              ),
-//              onPressed: () => {},
-//              splashColor: Colors.white70,
-//            ),
-
-
-
           ],
+          //  ),
         ),
       ),
     );
   }
-}
 
+  _navigateToHome_page(BuildContext context) async {
+    Map usuario = await Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => HomePage(id: _idController.text)),
+    );
+  }
+}
