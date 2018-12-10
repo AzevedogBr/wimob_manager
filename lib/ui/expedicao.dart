@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:gradient_app_bar/gradient_app_bar.dart';
+
 
 class Expedicao extends StatefulWidget {
   static String tag = 'expedicao';
@@ -12,8 +14,9 @@ class _ExpedicaoState extends State<Expedicao> {
   Widget build(BuildContext context) {
     return Scaffold(
 
-        appBar: new AppBar(
-        backgroundColor: Colors.teal,
+      appBar: new GradientAppBar(
+        backgroundColorStart: Colors.teal.shade700,
+        backgroundColorEnd: Colors.teal.shade900,
         title: Text(
         "Financeiro",
         style: TextStyle(

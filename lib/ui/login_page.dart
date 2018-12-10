@@ -46,7 +46,7 @@ class _LoginPageState extends State<LoginPage> {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
                 Text(
-                  "WiMobi Manager",
+                  "WiMob Manager",
                   style: TextStyle(
                       fontSize: 35.0,
                       fontFamily: 'righteous_regular',

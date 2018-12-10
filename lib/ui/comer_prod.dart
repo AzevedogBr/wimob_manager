@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:wimob_manager/ui/comercial.dart';
 import 'package:gradient_app_bar/gradient_app_bar.dart';
-import 'package:wimob_manager/ui/comer_cli.dart';
-import 'package:wimob_manager/ui/comer_prod.dart';
+import 'package:wimob_manager/ui/comer_rel_vxp.dart';
 
 
-class Comercial extends StatefulWidget {
-  static String tag = 'comercial';
+class ComerProd extends StatefulWidget {
+  static String tag = 'comer-prod';
 
   @override
-  _ComercialState createState() => _ComercialState();
+  _ComerProdState createState() => _ComerProdState();
 }
 
-class _ComercialState extends State<Comercial> {
+class _ComerProdState extends State<ComerProd> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,7 +19,7 @@ class _ComercialState extends State<Comercial> {
         backgroundColorStart: Colors.teal.shade700,
         backgroundColorEnd: Colors.teal.shade900,
         title: Text(
-          "Comercial",
+          "Relatorio de Produtos",
           style: TextStyle(
               fontSize: 20.0,
               fontWeight: FontWeight.w700,
@@ -27,6 +27,7 @@ class _ComercialState extends State<Comercial> {
               color: Colors.white),
         ),
       ),
+
       body: new Container(
         padding: const EdgeInsets.only(top: 20.0),
         child: Row(
@@ -46,7 +47,7 @@ class _ComercialState extends State<Comercial> {
                               Navigator.push(
                                   context,
                                   new MaterialPageRoute(
-                                      builder: (context) => new ComerCli()));
+                                      builder: (context) => new ComerRelVxP.withSampleData()));
                             },
                             child: Container(
                               height: 70.0,
@@ -66,22 +67,22 @@ class _ComercialState extends State<Comercial> {
                                     padding: const EdgeInsets.all(2.0),
                                     child: Row(
                                       mainAxisAlignment:
-                                          MainAxisAlignment.center,
+                                      MainAxisAlignment.center,
                                       //crossAxisAlignment: CrossAxisAlignment.center,
                                       children: <Widget>[
                                         Container(
                                           decoration: BoxDecoration(
                                               color: Colors.teal,
                                               borderRadius:
-                                                  BorderRadius.circular(20.0),
+                                              BorderRadius.circular(20.0),
                                               border: Border.all(
-                                                  color: Colors.grey,
+                                                //color: Colors.grey,
                                                   width: 0.2)),
                                           child: Padding(
                                               padding:
-                                                  const EdgeInsets.all(4.0),
+                                              const EdgeInsets.all(4.0),
                                               child: Image.asset(
-                                                'assets/ic_cli.png',
+                                                'assets/ic_venProd.png',
                                                 height: 30.0,
                                                 width: 30.0,
                                                 alignment: Alignment.center,
@@ -94,9 +95,9 @@ class _ComercialState extends State<Comercial> {
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: <Widget>[
                                       Text(
-                                        'Clientes',
+                                        'Vendas X Produtos',
                                         style: TextStyle(
-                                            color: Colors.black,
+                                            color: Colors.teal.shade900,
                                             fontSize: 16.0,
                                             fontWeight: FontWeight.w400),
                                       ),
@@ -122,18 +123,18 @@ class _ComercialState extends State<Comercial> {
                               Navigator.push(
                                   context,
                                   new MaterialPageRoute(
-                                      builder: (context) => new ComerProd()));
+                                      builder: (context) => new Comercial()));
                             },
                             child: Container(
                               height: 70.0,
                               width: 350.0,
                               decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(20.0),
-                                  border: Border.all(
-                                    color: Colors.black,
-                                    width: 0.2,
-                                  ),
-                               //   color: Colors.orange.shade300
+                                borderRadius: BorderRadius.circular(20.0),
+                                border: Border.all(
+                                  color: Colors.black,
+                                  width: 0.2,
+                                ),
+                                // color: Colors.orange.shade300
                               ),
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
@@ -142,21 +143,21 @@ class _ComercialState extends State<Comercial> {
                                     padding: const EdgeInsets.all(2.0),
                                     child: Row(
                                       mainAxisAlignment:
-                                          MainAxisAlignment.center,
+                                      MainAxisAlignment.center,
                                       //crossAxisAlignment: CrossAxisAlignment.center,
                                       children: <Widget>[
                                         Container(
                                           decoration: BoxDecoration(
-                                            color: Colors.orange,
+                                            color: Colors.orange.shade900,
                                             borderRadius:
-                                                BorderRadius.circular(20.0),
+                                            BorderRadius.circular(20.0),
 //
                                           ),
                                           child: Padding(
                                               padding:
-                                                  const EdgeInsets.all(4.0),
+                                              const EdgeInsets.all(4.0),
                                               child: Image.asset(
-                                                'assets/ic_ven.png',
+                                                'assets/ic_volXcli.png',
                                                 height: 30.0,
                                                 width: 30.0,
                                                 alignment: Alignment.center,
@@ -169,7 +170,7 @@ class _ComercialState extends State<Comercial> {
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: <Widget>[
                                       Text(
-                                        'Vendedor',
+                                        'Produtos + Vendidos',
                                         style: TextStyle(
                                             color: Colors.black,
                                             fontSize: 16.0,
@@ -197,19 +198,19 @@ class _ComercialState extends State<Comercial> {
                               Navigator.push(
                                   context,
                                   new MaterialPageRoute(
-                                      builder: (context) => new ComerProd())
+                                      builder: (context) => new Comercial())
                               );
                             },
                             child: Container(
                               height: 70.0,
                               width: 350.0,
                               decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(20.0),
-                                  border: Border.all(
-                                    color: Colors.black,
-                                    width: 0.2,
-                                  ),
-                                //  color: Colors.pinkAccent
+                                borderRadius: BorderRadius.circular(20.0),
+                                border: Border.all(
+                                  color: Colors.black,
+                                  width: 0.2,
+                                ),
+                                //    color: Colors.pinkAccent
                               ),
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
@@ -221,13 +222,12 @@ class _ComercialState extends State<Comercial> {
                                       //crossAxisAlignment: CrossAxisAlignment.center,
                                       children: <Widget>[
                                         Container(
-                                        decoration: BoxDecoration(
-                                          color: Colors.lightBlue.shade300,
-                                          borderRadius:
-                                              BorderRadius.circular(20.0),
-                                          border: Border.all(
-                                              color: Colors.grey, width: 0.2),
-                                        ),
+                                          decoration: BoxDecoration(
+                                            color: Colors.lightBlue,
+                                            borderRadius:
+                                            BorderRadius.circular(20.0),
+//
+                                          ),
                                           child: Padding(
                                             padding: const EdgeInsets.all(4.0),
                                             child: Image.asset(
@@ -245,7 +245,7 @@ class _ComercialState extends State<Comercial> {
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: <Widget>[
                                       Text(
-                                        'Produtos',
+                                        'Teste',
                                         style: TextStyle(
                                             fontSize: 16.0,
                                             fontWeight: FontWeight.w400,
@@ -268,8 +268,7 @@ class _ComercialState extends State<Comercial> {
           ],
         ),
       ),
+
     );
   }
 }
-
-

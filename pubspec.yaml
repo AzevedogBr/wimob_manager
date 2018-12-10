@@ -19,6 +19,8 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
+  gradient_app_bar: ^0.0.1
+  charts_flutter: ^ 0.5.0
 
 dev_dependencies:
   flutter_test:
@@ -44,6 +46,13 @@ flutter:
    - assets/vendas.png
    - assets/finan.png
    - assets/config.png
+   - assets/ic_cli.png
+   - assets/ic_prod.png
+   - assets/ic_ven.png
+   - assets/ic_volXcli.png
+   - assets/ic_venProd.png
+
+
   #  - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
@@ -65,9 +74,16 @@ flutter:
   #         style: italic
   #   - family: Trajan Pro
   fonts:
+      - family: wibi
+        fonts:
+          - asset: assets/wibi.ttf
+
       - family: righteous_regular
         fonts:
           - asset: assets/righteous_regular.ttf
+
+      - family: slim_jim
+        fonts:
           - asset: assets/slim_jim.ttf
   #
   # For details regarding fonts from package dependencies,

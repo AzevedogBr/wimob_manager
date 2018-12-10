@@ -6,6 +6,7 @@ import 'package:wimob_manager/ui/comercial.dart';
 import 'package:wimob_manager/ui/financeiro.dart';
 import 'package:wimob_manager/ui/expedicao.dart';
 import 'package:wimob_manager/ui/sinc.dart';
+import 'package:wimob_manager/ui/comer_cli.dart';
 
 
 
@@ -21,11 +22,13 @@ class MyApp extends StatelessWidget {
     Expedicao.tag: (context) => Expedicao(),
     Sinc.tag: (context) => Sinc(),
     Config.tag: (context) => Config(),
+    Config.tag: (context) => ComerCli(),
   };
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: LoginPage(),
       routes: routes,
     );

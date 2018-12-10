@@ -4,6 +4,7 @@ import 'package:wimob_manager/ui/financeiro.dart';
 import 'package:wimob_manager/ui/expedicao.dart';
 import 'package:wimob_manager/ui/sinc.dart';
 import 'package:wimob_manager/ui/config.dart';
+import 'package:gradient_app_bar/gradient_app_bar.dart';
 
 class HomePage extends StatelessWidget {
   final String id;
@@ -42,7 +43,7 @@ class HomePage extends StatelessWidget {
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 15.0,
-                          fontFamily: 'slim_jim.ttf',
+                          //fontFamily: 'slim_jim',
                           fontWeight: FontWeight.w400,
                         ),
                       ),
@@ -55,7 +56,7 @@ class HomePage extends StatelessWidget {
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 15.0,
-                          fontFamily: 'slim_jim.ttf',
+                          //fontFamily: 'slim_jim',
                           fontWeight: FontWeight.w400,
                         ),
                       ),
@@ -113,7 +114,7 @@ class HomePage extends StatelessWidget {
                         builder: (context) => new Expedicao()));
               },
             ),
-             Padding(
+            Padding(
               padding: const EdgeInsets.all(5.0),
               child: Container(
                 height: 0.5,
@@ -128,13 +129,10 @@ class HomePage extends StatelessWidget {
                 style: TextStyle(fontSize: 14.0),
               ),
               onTap: () {
-                Navigator.push(
-                    context,
-                    new MaterialPageRoute(
-                        builder: (context) => new Sinc()));
+                Navigator.push(context,
+                    new MaterialPageRoute(builder: (context) => new Sinc()));
               },
             ),
-
             ListTile(
               dense: true,
               leading: const Icon(Icons.build, color: Colors.black),
@@ -143,26 +141,24 @@ class HomePage extends StatelessWidget {
                 style: TextStyle(fontSize: 14.0),
               ),
               onTap: () {
-                Navigator.push(
-                    context,
-                    new MaterialPageRoute(
-                        builder: (context) => new Config()));
+                Navigator.push(context,
+                    new MaterialPageRoute(builder: (context) => new Config()));
               },
             ),
-
-
           ],
         ),
       ),
 
-      appBar: new AppBar(
-        backgroundColor: Colors.teal,
+      appBar: new GradientAppBar(
+        backgroundColorStart: Colors.teal.shade900,
+        backgroundColorEnd: Colors.teal.shade700,
+
         title: Text(
           "Relatórios",
           style: TextStyle(
               fontSize: 20.0,
               fontWeight: FontWeight.w700,
-              fontFamily: 'Arial',
+              //fontFamily: 'slim_jim',
               color: Colors.white),
         ),
 
@@ -174,14 +170,11 @@ class HomePage extends StatelessWidget {
 //        ],
       ),
 
-      backgroundColor: Colors.white,
       body: new Container(
-
         padding: const EdgeInsets.all(9.0),
 
         //alignment: Alignment.center,
-        child:
-        Row(
+        child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
@@ -192,39 +185,65 @@ class HomePage extends StatelessWidget {
                   child: Row(
                     children: <Widget>[
                       Container(
-                        height: 130.0,
-                        width: 130.0,
-                        decoration: BoxDecoration(
-
-                            border: Border.all(
-                              color: Colors.grey,
-                              width: 0.1,
-
-
+                        child: new Material(
+                          child: new InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  new MaterialPageRoute(
+                                      builder: (context) => new Expedicao()));
+                            },
+                            child: new Container(
+                              height: 130.0,
+                              width: 130.0,
+                              decoration: BoxDecoration(
+                                color: Colors.transparent,
+                                borderRadius: BorderRadius.circular(20.0),
+                                border: Border.all(
+                                  color: Colors.grey,
+                                  width: 0.2,
+                                ),
+                                //   color: Colors.transparent
+                              ),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: <Widget>[
+                                  Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.center,
+                                      children: <Widget>[
+                                        Image.asset(
+                                          'assets/entrega.png',
+                                          height: 40.0,
+                                          width: 40.0,
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: <Widget>[
+                                      Text(
+                                        'Expedição',
+                                        style: TextStyle(
+                                          fontSize: 14.0,
+                                          fontWeight: FontWeight.w500,
+                                          //fontFamily: slim_jim
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
                             ),
-                            color: Colors.white24),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: <Widget>[
-                            Row(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: <Widget>[
-                          Image.asset(
-                          'assets/entrega.png',
-                          height: 60.0,
-                          width: 60.0,),
-                            ],),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.end,
-                              children: <Widget>[
-                              Text('Transporte'),
-                            ],),
-                          ],
+                          ),
                         ),
-
                       )
                     ],
-
                   ),
                 ),
                 Padding(
@@ -232,42 +251,63 @@ class HomePage extends StatelessWidget {
                   child: Row(
                     children: <Widget>[
                       Container(
-                        height: 130.0,
-                        width: 130.0,
-                        decoration: BoxDecoration(
-
-                            border: Border.all(
-                              color: Colors.grey,
-                              width: 0.1,
-
-
+                        child: new Material(
+                          child: new InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  new MaterialPageRoute(
+                                      builder: (context) => new Financeiro()));
+                            },
+                            child: new Container(
+                              height: 130.0,
+                              width: 130.0,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(20.0),
+                                  border: Border.all(
+                                    color: Colors.grey,
+                                    width: 0.2,
+                                  ),
+                                  color: Colors.white24),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: <Widget>[
+                                  Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.center,
+                                      children: <Widget>[
+                                        Image.asset(
+                                          'assets/finan.png',
+                                          height: 40.0,
+                                          width: 40.0,
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: <Widget>[
+                                      Text(
+                                        'Financeiro',
+                                        style: TextStyle(
+                                            fontSize: 14.0,
+                                            fontWeight: FontWeight.w500),
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
                             ),
-                            color: Colors.white24),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: <Widget>[
-                            Row(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: <Widget>[
-                                Image.asset(
-                                  'assets/finan.png',
-                                  height: 60.0,
-                                  width: 60.0,),
-                              ],),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.end,
-                              children: <Widget>[
-                                Text('Financeiro'),
-                              ],),
-                          ],
+                          ),
                         ),
-
                       )
                     ],
-
                   ),
-                ),
-
+                )
               ],
             ),
             Column(
@@ -277,39 +317,61 @@ class HomePage extends StatelessWidget {
                   child: Row(
                     children: <Widget>[
                       Container(
-                        height: 130.0,
-                        width: 130.0,
-                        decoration: BoxDecoration(
-
-                            border: Border.all(
-                              color: Colors.grey,
-                              width: 0.1,
-
-
+                        child: new Material(
+                          child: new InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  new MaterialPageRoute(
+                                      builder: (context) => new Comercial()));
+                            },
+                            child: new Container(
+                              height: 130.0,
+                              width: 130.0,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(20.0),
+                                  border: Border.all(
+                                    color: Colors.grey,
+                                    width: 0.2,
+                                  ),
+                                  color: Colors.white24),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: <Widget>[
+                                  Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.center,
+                                      children: <Widget>[
+                                        Image.asset(
+                                          'assets/vendas.png',
+                                          height: 40.0,
+                                          width: 40.0,
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: <Widget>[
+                                      Text(
+                                        'Comercial',
+                                        style: TextStyle(
+                                            fontSize: 14.0,
+                                            fontWeight: FontWeight.w500),
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
                             ),
-                            color: Colors.white24),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: <Widget>[
-                            Row(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: <Widget>[
-                                Image.asset(
-                                  'assets/vendas.png',
-                                  height: 60.0,
-                                  width: 60.0,),
-                              ],),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.end,
-                              children: <Widget>[
-                                Text('Comercial'),
-                              ],),
-                          ],
+                          ),
                         ),
-
                       )
                     ],
-
                   ),
                 ),
                 Padding(
@@ -317,85 +379,108 @@ class HomePage extends StatelessWidget {
                   child: Row(
                     children: <Widget>[
                       Container(
-                        height: 130.0,
-                        width: 130.0,
-                        decoration: BoxDecoration(
-
-                            border: Border.all(
-                              color: Colors.grey,
-                              width: 0.1,
-
-
+                        child: new Material(
+                          child: new InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  new MaterialPageRoute(
+                                      builder: (context) => new Config()));
+                            },
+                            child: new Container(
+                              height: 130.0,
+                              width: 130.0,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(20.0),
+                                  border: Border.all(
+                                    color: Colors.grey,
+                                    width: 0.2,
+                                  ),
+                                  color: Colors.white24),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: <Widget>[
+                                  Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.center,
+                                      children: <Widget>[
+                                        Image.asset(
+                                          'assets/config.png',
+                                          height: 40.0,
+                                          width: 40.0,
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: <Widget>[
+                                      Text(
+                                        'Configuração',
+                                        style: TextStyle(
+                                            fontSize: 14.0,
+                                            fontWeight: FontWeight.w500),
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
                             ),
-                            color: Colors.white24),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: <Widget>[
-                            Row(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                               children: <Widget>[
-                                Image.asset(
-                                  'assets/config.png',
-                                  height: 60.0,
-                                  width: 60.0,),
-                              ],),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.end,
-                              children: <Widget>[
-                                Text('Configuração'),
-                              ],),
-                          ],
+                          ),
                         ),
-
                       )
                     ],
-
                   ),
-                ),
-
+                )
               ],
             ),
-
-
-          ],
-        ),
-
-      ),
-
-      bottomNavigationBar: new Theme(
-        data: Theme.of(context).copyWith(
-            // sets the background color of the `BottomNavigationBar`
-            canvasColor: Colors.teal,
-            // sets the active color of the `BottomNavigationBar` if `Brightness` is light
-            primaryColor: Colors.white,
-            textTheme: Theme.of(context)
-                .textTheme
-                .copyWith(caption: new TextStyle(color: Colors.white))),
-        // sets the inactive color of the `BottomNavigationBar`
-
-        //Barra Inferior
-        child: new BottomNavigationBar(
-          type: BottomNavigationBarType.fixed,
-          currentIndex: 0,
-          items: [
-            new BottomNavigationBarItem(
-              icon: new Icon(Icons.add),
-              title: new Text("Add"),
-            ),
-            new BottomNavigationBarItem(
-              icon: new Icon(Icons.delete),
-              title: new Text("Delete"),
-            )
           ],
         ),
       ),
 
-      floatingActionButton: FloatingActionButton(
-        // botão flutuante
-        onPressed: null,
-        child: Icon(Icons.add),
-        backgroundColor: Colors.teal,
-      ),
+
+// Barra inferior
+
+//      bottomNavigationBar: new Theme(
+//        data: Theme.of(context).copyWith(
+//            // sets the background color of the `BottomNavigationBar`
+//            canvasColor: Colors.teal,
+//            // sets the active color of the `BottomNavigationBar` if `Brightness` is light
+//            primaryColor: Colors.white,
+//            textTheme: Theme.of(context)
+//                .textTheme
+//                .copyWith(caption: new TextStyle(color: Colors.white))),
+//        // sets the inactive color of the `BottomNavigationBar`
+//
+//        //Barra Inferior
+//        child: new BottomNavigationBar(
+//          type: BottomNavigationBarType.fixed,
+//          currentIndex: 0,
+//          items: [
+//            new BottomNavigationBarItem(
+//              icon: new Icon(Icons.add),
+//              title: new Text("Add"),
+//            ),
+//            new BottomNavigationBarItem(
+//              icon: new Icon(Icons.delete),
+//              title: new Text("Delete"),
+//            )
+//          ],
+//        ),
+//      ),
+
+
+//    Botão flutuante adição
+//      floatingActionButton: FloatingActionButton(
+//        // botão flutuante
+//        onPressed: null,
+//        child: Icon(Icons.add),
+//        backgroundColor: Colors.teal,
+//      ),
       //        backgroundColor: Colors.teal
     );
   }
