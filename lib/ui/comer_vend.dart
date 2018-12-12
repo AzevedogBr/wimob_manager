@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:wimob_manager/ui/comercial.dart';
 import 'package:gradient_app_bar/gradient_app_bar.dart';
-import 'package:wimob_manager/ui/comer_rel_vxp.dart';
+import 'package:wimob_manager/ui/comer_rel_pv.dart';
 
 
-class ComerProd extends StatefulWidget {
-  static String tag = 'comer-prod';
+class ComerVend extends StatefulWidget {
+  static String tag = 'comer-vend';
 
   @override
-  _ComerProdState createState() => _ComerProdState();
+  _ComerVendState createState() => _ComerVendState();
 }
 
-class _ComerProdState extends State<ComerProd> {
+class _ComerVendState extends State<ComerVend> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,7 +19,7 @@ class _ComerProdState extends State<ComerProd> {
         backgroundColorStart: Colors.teal.shade700,
         backgroundColorEnd: Colors.teal.shade900,
         title: Text(
-          "Vendedores",
+          "Relatório de Vendedores",
           style: TextStyle(
               fontSize: 20.0,
               fontWeight: FontWeight.w700,
@@ -27,7 +27,6 @@ class _ComerProdState extends State<ComerProd> {
               color: Colors.white),
         ),
       ),
-
       body: new Container(
         padding: const EdgeInsets.only(top: 20.0),
         child: Row(
@@ -47,7 +46,7 @@ class _ComerProdState extends State<ComerProd> {
                               Navigator.push(
                                   context,
                                   new MaterialPageRoute(
-                                      builder: (context) => new ComerRelVxP.withSampleData()));
+                                      builder: (context) => new ComerRelPV()));
                             },
                             child: Container(
                               height: 70.0,
@@ -82,7 +81,7 @@ class _ComerProdState extends State<ComerProd> {
                                               padding:
                                               const EdgeInsets.all(4.0),
                                               child: Image.asset(
-                                                'assets/ic_venProd.png',
+                                                'assets/ic_posit.png',
                                                 height: 30.0,
                                                 width: 30.0,
                                                 alignment: Alignment.center,
@@ -95,7 +94,7 @@ class _ComerProdState extends State<ComerProd> {
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: <Widget>[
                                       Text(
-                                        'Vendas X Produtos',
+                                        'Ranking Vendas',
                                         style: TextStyle(
                                             color: Colors.teal.shade900,
                                             fontSize: 16.0,
@@ -170,7 +169,7 @@ class _ComerProdState extends State<ComerProd> {
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: <Widget>[
                                       Text(
-                                        'Produtos + Vendidos',
+                                        'Volume x Clientes',
                                         style: TextStyle(
                                             color: Colors.black,
                                             fontSize: 16.0,

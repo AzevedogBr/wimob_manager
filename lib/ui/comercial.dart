@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gradient_app_bar/gradient_app_bar.dart';
 import 'package:wimob_manager/ui/comer_cli.dart';
 import 'package:wimob_manager/ui/comer_prod.dart';
+import 'package:wimob_manager/ui/comer_vend.dart';
 
 
 class Comercial extends StatefulWidget {
@@ -122,7 +123,7 @@ class _ComercialState extends State<Comercial> {
                               Navigator.push(
                                   context,
                                   new MaterialPageRoute(
-                                      builder: (context) => new ComerProd()));
+                                      builder: (context) => new ComerVend()));
                             },
                             child: Container(
                               height: 70.0,
