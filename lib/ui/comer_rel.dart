@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-class ComerRel extends StatefulWidget {
-  static String tag = 'comer-rel';
+//void main() => runApp(new ComerRel());
 
+class ComerRel extends StatefulWidget {
   final Function() onPressed;
   final String tooltip;
   final IconData icon;
@@ -26,7 +26,8 @@ class _ComerRelState extends State<ComerRel>
   @override
   initState() {
     _animationController =
-    AnimationController(vsync: this, duration: Duration(milliseconds: 500))
+    AnimationController(vsync: this, duration: Duration(milliseconds: 500,
+    ))
       ..addListener(() {
         setState(() {});
       });
@@ -74,9 +75,11 @@ class _ComerRelState extends State<ComerRel>
 
   Widget add() {
     return Container(
+
       child: FloatingActionButton(
         onPressed: null,
         tooltip: 'Add',
+
         child: Icon(Icons.add),
       ),
     );
@@ -118,38 +121,48 @@ class _ComerRelState extends State<ComerRel>
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Column(
-       // mainAxisAlignment: MainAxisAlignment.end,
-        children: <Widget>[
-          Transform(
-            transform: Matrix4.translationValues(
-              0.0,
-              _translateButton.value * 3.0,
-              0.0,
+    return MaterialApp(
+        home: Container(
+          color: Colors.white,
+          child: Padding(
+            padding: const EdgeInsets.all(15.0),
+            child: Column(
+
+              crossAxisAlignment: CrossAxisAlignment.end,
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: <Widget>[
+                Transform(
+                  transform: Matrix4.translationValues(
+                    0.0,
+                    _translateButton.value * 3.0,
+                    0.0,
+                  ),
+                  child: add(),
+                ),
+                Transform(
+                  transform: Matrix4.translationValues(
+                    0.0,
+                    _translateButton.value * 2.0,
+                    0.0,
+                  ),
+                  child: image(),
+                ),
+                Transform(
+                  transform: Matrix4.translationValues(
+                    0.0,
+                    _translateButton.value,
+                    0.0,
+                  ),
+                  child: inbox(),
+                ),
+                toggle(),
+              ],
             ),
-            child: add(),
           ),
-          Transform(
-            transform: Matrix4.translationValues(
-              0.0,
-              _translateButton.value * 2.0,
-              0.0,
-            ),
-            child: image(),
-          ),
-          Transform(
-            transform: Matrix4.translationValues(
-              0.0,
-              _translateButton.value,
-              0.0,
-            ),
-            child: inbox(),
-          ),
-          toggle(),
-        ],
-      ),
+        )
+
     );
+
   }
 }
 
