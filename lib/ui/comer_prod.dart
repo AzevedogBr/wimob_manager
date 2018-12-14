@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:wimob_manager/ui/comercial.dart';
 import 'package:gradient_app_bar/gradient_app_bar.dart';
-import 'package:wimob_manager/ui/comer_rel_vxp.dart';
+import 'package:wimob_manager/ui/comer_rel.dart';
 
 
 class ComerProd extends StatefulWidget {
@@ -47,7 +47,7 @@ class _ComerProdState extends State<ComerProd> {
                               Navigator.push(
                                   context,
                                   new MaterialPageRoute(
-                                      builder: (context) => new ComerRelVxP.withSampleData()));
+                                      builder: (context) => new ComerRel()));
                             },
                             child: Container(
                               height: 70.0,

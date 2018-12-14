@@ -3,6 +3,7 @@ import 'package:gradient_app_bar/gradient_app_bar.dart';
 import 'package:wimob_manager/ui/comer_cli.dart';
 import 'package:wimob_manager/ui/comer_prod.dart';
 import 'package:wimob_manager/ui/comer_vend.dart';
+import 'package:wimob_manager/ui/comer_rel.dart';
 
 
 class Comercial extends StatefulWidget {
@@ -198,7 +199,7 @@ class _ComercialState extends State<Comercial> {
                               Navigator.push(
                                   context,
                                   new MaterialPageRoute(
-                                      builder: (context) => new ComerProd())
+                                      builder: (context) => new ComerRel())
                               );
                             },
                             child: Container(
