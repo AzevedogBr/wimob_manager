@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "351760953665",
+    "firebase_url": "https://testenotificacao-7702f.firebaseio.com",
+    "project_id": "testenotificacao-7702f",
+    "storage_bucket": "testenotificacao-7702f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:351760953665:android:569e19340e90ce69",
+        "android_client_info": {
+          "package_name": "br.com.wibi.wimobmanager"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "351760953665-gbkpe44kjgld4fk67pfpr33pot7brafu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAkOF-lY-cACLbsHcubKtzKWm3b3xUvETs"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -7,7 +7,18 @@ import 'package:wimob_manager/ui/config.dart';
 import 'package:gradient_app_bar/gradient_app_bar.dart';
 
 class HomePage extends StatelessWidget {
+  final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
   final String id;
+  _showSnackBar(){
+    print('Você tem novas autorizações pendentes');
+    final snackBar = new SnackBar(
+        content: new Text('Você tem autorizações pendentes!')
+    );
+
+    _scaffoldKey.currentState.showSnackBar(snackBar);
+
+
+  }
 
   HomePage({Key key, this.id}) : super(key: key);
 
@@ -16,6 +27,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _scaffoldKey,
       //Menu superior esquerdo "Drawer"-
       drawer: Drawer(
         child: ListView(
@@ -152,7 +164,6 @@ class HomePage extends StatelessWidget {
       appBar: new GradientAppBar(
         backgroundColorStart: Colors.teal.shade900,
         backgroundColorEnd: Colors.teal.shade700,
-
         title: Text(
           "Relatórios",
           style: TextStyle(
@@ -161,6 +172,11 @@ class HomePage extends StatelessWidget {
               //fontFamily: 'slim_jim',
               color: Colors.white),
         ),
+        actions: <Widget>[
+          new IconButton(
+              icon: new Icon(Icons.info),
+              onPressed: _showSnackBar)
+        ],
 
 //        Adição de icones superiores no AppBar
 //        actions: <Widget>[
