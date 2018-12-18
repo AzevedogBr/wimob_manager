@@ -4,6 +4,7 @@ import 'package:wimob_manager/ui/comer_cli.dart';
 import 'package:wimob_manager/ui/comer_prod.dart';
 import 'package:wimob_manager/ui/comer_vend.dart';
 import 'package:wimob_manager/ui/comer_rel.dart';
+import 'package:wimob_manager/ui/graf_cli.dart';
 
 
 class Comercial extends StatefulWidget {
@@ -48,7 +49,7 @@ class _ComercialState extends State<Comercial> {
                               Navigator.push(
                                   context,
                                   new MaterialPageRoute(
-                                      builder: (context) => new ComerCli()));
+                                      builder: (context) => new GrafCli()));
                             },
                             child: Container(
                               height: 70.0,
