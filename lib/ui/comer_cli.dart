@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:wimob_manager/ui/comercial.dart';
 import 'package:gradient_app_bar/gradient_app_bar.dart';
 
-
 class ComerCli extends StatefulWidget {
   static String tag = 'comer-cli';
 
@@ -65,20 +64,20 @@ class _ComerCliState extends State<ComerCli> {
                                     padding: const EdgeInsets.all(2.0),
                                     child: Row(
                                       mainAxisAlignment:
-                                      MainAxisAlignment.center,
+                                          MainAxisAlignment.center,
                                       //crossAxisAlignment: CrossAxisAlignment.center,
                                       children: <Widget>[
                                         Container(
                                           decoration: BoxDecoration(
-                                            color: Colors.teal,
+                                              color: Colors.teal,
                                               borderRadius:
-                                              BorderRadius.circular(20.0),
+                                                  BorderRadius.circular(20.0),
                                               border: Border.all(
                                                   //color: Colors.grey,
                                                   width: 0.2)),
                                           child: Padding(
                                               padding:
-                                              const EdgeInsets.all(4.0),
+                                                  const EdgeInsets.all(4.0),
                                               child: Image.asset(
                                                 'assets/ic_posit.png',
                                                 height: 30.0,
@@ -127,13 +126,13 @@ class _ComerCliState extends State<ComerCli> {
                               height: 70.0,
                               width: 350.0,
                               decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(20.0),
-                                  border: Border.all(
-                                    color: Colors.black,
-                                    width: 0.2,
-                                  ),
-                                 // color: Colors.orange.shade300
+                                borderRadius: BorderRadius.circular(20.0),
+                                border: Border.all(
+                                  color: Colors.black,
+                                  width: 0.2,
                                 ),
+                                // color: Colors.orange.shade300
+                              ),
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: <Widget>[
@@ -141,19 +140,19 @@ class _ComerCliState extends State<ComerCli> {
                                     padding: const EdgeInsets.all(2.0),
                                     child: Row(
                                       mainAxisAlignment:
-                                      MainAxisAlignment.center,
+                                          MainAxisAlignment.center,
                                       //crossAxisAlignment: CrossAxisAlignment.center,
                                       children: <Widget>[
                                         Container(
                                           decoration: BoxDecoration(
                                             color: Colors.orange.shade900,
                                             borderRadius:
-                                            BorderRadius.circular(20.0),
+                                                BorderRadius.circular(20.0),
 //
                                           ),
                                           child: Padding(
                                               padding:
-                                              const EdgeInsets.all(4.0),
+                                                  const EdgeInsets.all(4.0),
                                               child: Image.asset(
                                                 'assets/ic_volXcli.png',
                                                 height: 30.0,
@@ -196,19 +195,18 @@ class _ComerCliState extends State<ComerCli> {
                               Navigator.push(
                                   context,
                                   new MaterialPageRoute(
-                                      builder: (context) => new Comercial())
-                              );
+                                      builder: (context) => new Comercial()));
                             },
                             child: Container(
                               height: 70.0,
                               width: 350.0,
                               decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(20.0),
-                                  border: Border.all(
-                                    color: Colors.black,
-                                    width: 0.2,
-                                  ),
-                              //    color: Colors.pinkAccent
+                                borderRadius: BorderRadius.circular(20.0),
+                                border: Border.all(
+                                  color: Colors.black,
+                                  width: 0.2,
+                                ),
+                                //    color: Colors.pinkAccent
                               ),
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
@@ -216,14 +214,15 @@ class _ComerCliState extends State<ComerCli> {
                                   Padding(
                                     padding: const EdgeInsets.all(2.0),
                                     child: Row(
-                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
                                       //crossAxisAlignment: CrossAxisAlignment.center,
                                       children: <Widget>[
                                         Container(
                                           decoration: BoxDecoration(
                                             color: Colors.lightBlue,
                                             borderRadius:
-                                            BorderRadius.circular(20.0),
+                                                BorderRadius.circular(20.0),
 //
                                           ),
                                           child: Padding(
@@ -260,13 +259,11 @@ class _ComerCliState extends State<ComerCli> {
                     ],
                   ),
                 ),
-
               ],
             )
           ],
         ),
       ),
-
     );
   }
 }
