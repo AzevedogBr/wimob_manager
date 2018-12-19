@@ -192,269 +192,275 @@ class HomePage extends StatelessWidget {
         padding: const EdgeInsets.all(9.0),
 
         //alignment: Alignment.center,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          crossAxisAlignment: CrossAxisAlignment.center,
+        child: ListView(
           children: <Widget>[
-            Column(
-              children: <Widget>[
-                Padding(
-                  padding: const EdgeInsets.all(2.0),
-                  child: Row(
+            Container(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+                  Column(
                     children: <Widget>[
-                      Container(
-                        child: new Material(
-                          child: new InkWell(
-                            onTap: () {
-                              Navigator.push(
-                                  context,
-                                  new MaterialPageRoute(
-                                      builder: (context) => new Expedicao()));
-                            },
-                            child: new Container(
-                              height: 130.0,
-                              width: 130.0,
-                              decoration: BoxDecoration(
-                                color: Colors.transparent,
-                                borderRadius: BorderRadius.circular(20.0),
-                                border: Border.all(
-                                  color: Colors.grey,
-                                  width: 0.2,
+                      Padding(
+                        padding: const EdgeInsets.all(2.0),
+                        child: Row(
+                          children: <Widget>[
+                            Container(
+                              child: new Material(
+                                child: new InkWell(
+                                  onTap: () {
+                                    Navigator.push(
+                                        context,
+                                        new MaterialPageRoute(
+                                            builder: (context) => new Expedicao()));
+                                  },
+                                  child: new Container(
+                                    height: 130.0,
+                                    width: 130.0,
+                                    decoration: BoxDecoration(
+                                      color: Colors.transparent,
+                                      borderRadius: BorderRadius.circular(20.0),
+                                      border: Border.all(
+                                        color: Colors.grey,
+                                        width: 0.2,
+                                      ),
+                                      //   color: Colors.transparent
+                                    ),
+                                    child: Column(
+                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      children: <Widget>[
+                                        Padding(
+                                          padding: const EdgeInsets.all(8.0),
+                                          child: Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.center,
+                                            children: <Widget>[
+                                              Image.asset(
+                                                'assets/entrega.png',
+                                                height: 40.0,
+                                                width: 40.0,
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                        Row(
+                                          mainAxisAlignment: MainAxisAlignment.center,
+                                          children: <Widget>[
+                                            Text(
+                                              'Expedição',
+                                              style: TextStyle(
+                                                fontSize: 14.0,
+                                                fontWeight: FontWeight.w500,
+                                                //fontFamily: slim_jim
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ],
+                                    ),
+                                  ),
                                 ),
-                                //   color: Colors.transparent
                               ),
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: <Widget>[
-                                  Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.center,
+                            )
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(2.0),
+                        child: Row(
+                          children: <Widget>[
+                            Container(
+                              child: new Material(
+                                child: new InkWell(
+                                  onTap: () {
+                                    Navigator.push(
+                                        context,
+                                        new MaterialPageRoute(
+                                            builder: (context) => new Financeiro()));
+                                  },
+                                  child: new Container(
+                                    height: 130.0,
+                                    width: 130.0,
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(20.0),
+                                        border: Border.all(
+                                          color: Colors.grey,
+                                          width: 0.2,
+                                        ),
+                                        color: Colors.white24),
+                                    child: Column(
+                                      mainAxisAlignment: MainAxisAlignment.center,
                                       children: <Widget>[
-                                        Image.asset(
-                                          'assets/entrega.png',
-                                          height: 40.0,
-                                          width: 40.0,
+                                        Padding(
+                                          padding: const EdgeInsets.all(8.0),
+                                          child: Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.center,
+                                            children: <Widget>[
+                                              Image.asset(
+                                                'assets/finan.png',
+                                                height: 40.0,
+                                                width: 40.0,
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                        Row(
+                                          mainAxisAlignment: MainAxisAlignment.center,
+                                          children: <Widget>[
+                                            Text(
+                                              'Financeiro',
+                                              style: TextStyle(
+                                                  fontSize: 14.0,
+                                                  fontWeight: FontWeight.w500),
+                                            ),
+                                          ],
                                         ),
                                       ],
                                     ),
                                   ),
-                                  Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: <Widget>[
-                                      Text(
-                                        'Expedição',
-                                        style: TextStyle(
-                                          fontSize: 14.0,
-                                          fontWeight: FontWeight.w500,
-                                          //fontFamily: slim_jim
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ],
+                                ),
                               ),
-                            ),
-                          ),
+                            )
+                          ],
                         ),
                       )
                     ],
                   ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(2.0),
-                  child: Row(
+                  Column(
                     children: <Widget>[
-                      Container(
-                        child: new Material(
-                          child: new InkWell(
-                            onTap: () {
-                              Navigator.push(
-                                  context,
-                                  new MaterialPageRoute(
-                                      builder: (context) => new Financeiro()));
-                            },
-                            child: new Container(
-                              height: 130.0,
-                              width: 130.0,
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(20.0),
-                                  border: Border.all(
-                                    color: Colors.grey,
-                                    width: 0.2,
-                                  ),
-                                  color: Colors.white24),
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: <Widget>[
-                                  Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.center,
+                      Padding(
+                        padding: const EdgeInsets.all(2.0),
+                        child: Row(
+                          children: <Widget>[
+                            Container(
+                              child: new Material(
+                                child: new InkWell(
+                                  onTap: () {
+                                    Navigator.push(
+                                        context,
+                                        new MaterialPageRoute(
+                                            builder: (context) => new Comercial()));
+                                  },
+                                  child: new Container(
+                                    height: 130.0,
+                                    width: 130.0,
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(20.0),
+                                        border: Border.all(
+                                          color: Colors.grey,
+                                          width: 0.2,
+                                        ),
+                                        color: Colors.white24),
+                                    child: Column(
+                                      mainAxisAlignment: MainAxisAlignment.center,
                                       children: <Widget>[
-                                        Image.asset(
-                                          'assets/finan.png',
-                                          height: 40.0,
-                                          width: 40.0,
+                                        Padding(
+                                          padding: const EdgeInsets.all(8.0),
+                                          child: Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.center,
+                                            children: <Widget>[
+                                              Image.asset(
+                                                'assets/vendas.png',
+                                                height: 40.0,
+                                                width: 40.0,
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                        Row(
+                                          mainAxisAlignment: MainAxisAlignment.center,
+                                          children: <Widget>[
+                                            Text(
+                                              'Comercial',
+                                              style: TextStyle(
+                                                  fontSize: 14.0,
+                                                  fontWeight: FontWeight.w500),
+                                            ),
+                                          ],
                                         ),
                                       ],
                                     ),
                                   ),
-                                  Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: <Widget>[
-                                      Text(
-                                        'Financeiro',
-                                        style: TextStyle(
-                                            fontSize: 14.0,
-                                            fontWeight: FontWeight.w500),
-                                      ),
-                                    ],
-                                  ),
-                                ],
+                                ),
                               ),
-                            ),
-                          ),
+                            )
+                          ],
                         ),
-                      )
-                    ],
-                  ),
-                )
-              ],
-            ),
-            Column(
-              children: <Widget>[
-                Padding(
-                  padding: const EdgeInsets.all(2.0),
-                  child: Row(
-                    children: <Widget>[
-                      Container(
-                        child: new Material(
-                          child: new InkWell(
-                            onTap: () {
-                              Navigator.push(
-                                  context,
-                                  new MaterialPageRoute(
-                                      builder: (context) => new Comercial()));
-                            },
-                            child: new Container(
-                              height: 130.0,
-                              width: 130.0,
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(20.0),
-                                  border: Border.all(
-                                    color: Colors.grey,
-                                    width: 0.2,
-                                  ),
-                                  color: Colors.white24),
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: <Widget>[
-                                  Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.center,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(2.0),
+                        child: Row(
+                          children: <Widget>[
+                            Container(
+                              child: new Material(
+                                child: new InkWell(
+                                  onTap: () {
+                                    Navigator.push(
+                                        context,
+                                        new MaterialPageRoute(
+                                            builder: (context) => new Config()));
+                                  },
+                                  child: new Container(
+                                    height: 130.0,
+                                    width: 130.0,
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(20.0),
+                                        border: Border.all(
+                                          color: Colors.grey,
+                                          width: 0.2,
+                                        ),
+                                        color: Colors.white24),
+                                    child: Column(
+                                      mainAxisAlignment: MainAxisAlignment.center,
                                       children: <Widget>[
-                                        Image.asset(
-                                          'assets/vendas.png',
-                                          height: 40.0,
-                                          width: 40.0,
+                                        Padding(
+                                          padding: const EdgeInsets.all(8.0),
+                                          child: Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.center,
+                                            children: <Widget>[
+                                              Image.asset(
+                                                'assets/config.png',
+                                                height: 40.0,
+                                                width: 40.0,
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                        Row(
+                                          mainAxisAlignment: MainAxisAlignment.center,
+                                          children: <Widget>[
+                                            Text(
+                                              'Configuração',
+                                              style: TextStyle(
+                                                  fontSize: 14.0,
+                                                  fontWeight: FontWeight.w500),
+                                            ),
+                                          ],
                                         ),
                                       ],
                                     ),
                                   ),
-                                  Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: <Widget>[
-                                      Text(
-                                        'Comercial',
-                                        style: TextStyle(
-                                            fontSize: 14.0,
-                                            fontWeight: FontWeight.w500),
-                                      ),
-                                    ],
-                                  ),
-                                ],
+                                ),
                               ),
-                            ),
-                          ),
+                            )
+                          ],
                         ),
                       )
                     ],
                   ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(2.0),
-                  child: Row(
-                    children: <Widget>[
-                      Container(
-                        child: new Material(
-                          child: new InkWell(
-                            onTap: () {
-                              Navigator.push(
-                                  context,
-                                  new MaterialPageRoute(
-                                      builder: (context) => new Config()));
-                            },
-                            child: new Container(
-                              height: 130.0,
-                              width: 130.0,
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(20.0),
-                                  border: Border.all(
-                                    color: Colors.grey,
-                                    width: 0.2,
-                                  ),
-                                  color: Colors.white24),
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: <Widget>[
-                                  Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.center,
-                                      children: <Widget>[
-                                        Image.asset(
-                                          'assets/config.png',
-                                          height: 40.0,
-                                          width: 40.0,
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                  Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: <Widget>[
-                                      Text(
-                                        'Configuração',
-                                        style: TextStyle(
-                                            fontSize: 14.0,
-                                            fontWeight: FontWeight.w500),
-                                      ),
-                                    ],
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                        ),
-                      )
-                    ],
-                  ),
-                )
-              ],
+                ],
+              ),
             ),
           ],
         ),

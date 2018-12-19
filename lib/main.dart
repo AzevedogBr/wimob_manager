@@ -35,7 +35,6 @@ class _MyAppState extends State<MyApp> {
   };
 
 
-
     String textValue = '';
     FirebaseMessaging firebaseMessaging = new FirebaseMessaging();
 
@@ -43,13 +42,14 @@ class _MyAppState extends State<MyApp> {
   void initState() {
       firebaseMessaging.configure(
         onLaunch: (Map<String, dynamic> msg){
-          print('onLaunch called');
+          print(msg);
         },
         onResume: (Map<String, dynamic> msg){
-          print('onResume called');
+          print(msg);
+          
         },
         onMessage: (Map<String, dynamic> msg){
-          print('onMessage called');
+          print(msg);
         },
       );
 
@@ -63,9 +63,9 @@ class _MyAppState extends State<MyApp> {
       firebaseMessaging.onIosSettingsRegistered.listen((IosNotificationSettings setting){
         print('Ios setting Registed');
       });
-//      firebaseMessaging.getToken().then((token){
-//       update(token);
-//      });
+      firebaseMessaging.getToken().then((token){
+       update(token);
+      });
 
     super.initState();
 
@@ -75,13 +75,13 @@ class _MyAppState extends State<MyApp> {
 
   }
 
-//    update(String token){
-//      print(token);
-//      textValue = token;
-//      setState(() {
-//
-//      });
-//    }
+    update(String token){
+      print(token);
+      textValue = token;
+      setState(() {
+
+      });
+    }
 
 
 
