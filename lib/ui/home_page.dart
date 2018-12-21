@@ -1,5 +1,3 @@
-//https://www.youtube.com/watch?v=xx7hemn3FY4
-
 import 'package:flutter/material.dart';
 import 'package:wimob_manager/ui/comercial.dart';
 import 'package:wimob_manager/ui/financeiro.dart';
@@ -7,6 +5,7 @@ import 'package:wimob_manager/ui/expedicao.dart';
 import 'package:wimob_manager/ui/sinc.dart';
 import 'package:wimob_manager/ui/config.dart';
 import 'package:gradient_app_bar/gradient_app_bar.dart';
+import 'package:wimob_manager/ui/alcada_eletro.dart';
 
 class HomePage extends StatelessWidget {
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
@@ -462,6 +461,76 @@ class HomePage extends StatelessWidget {
                 ],
               ),
             ),
+            Padding(
+              padding: EdgeInsets.only(
+                  left: 0.0, top: 40.0, right: 0.0, bottom: 0.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+
+                children: <Widget>[
+                  Container(
+                    child: new Material(
+                      child: new InkWell(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              new MaterialPageRoute(
+                                  builder: (context) => new AlcadaEletro()));
+                        },
+                        child: new Container(
+                          height: 80.0,
+                          width: 290.0,
+                          decoration: BoxDecoration(
+                            color: Colors.grey.shade100,
+                            borderRadius: BorderRadius.circular(20.0),
+                            border: Border.all(
+                              color: Colors.grey,
+                              width: 0.2,
+                            ),
+                            //   color: Colors.transparent
+                          ),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: <Widget>[
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Row(
+                                  mainAxisAlignment:
+                                  MainAxisAlignment.center,
+                                  crossAxisAlignment:
+                                  CrossAxisAlignment.center,
+                                  children: <Widget>[
+                                    Image.asset(
+                                      'assets/ic_autori.png',
+                                      height: 40.0,
+                                      width: 40.0,
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: <Widget>[
+                                  Text(
+                                    'Autorizações',
+                                    style: TextStyle(
+                                      fontSize: 16.0,
+                                      fontWeight: FontWeight.w500,
+                                      //fontFamily: slim_jim
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  )
+                ],
+
+              ),
+            )
           ],
         ),
       ),

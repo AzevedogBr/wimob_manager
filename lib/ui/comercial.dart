@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:gradient_app_bar/gradient_app_bar.dart';
-import 'package:wimob_manager/ui/comer_cli.dart';
-import 'package:wimob_manager/ui/comer_prod.dart';
 import 'package:wimob_manager/ui/comer_vend.dart';
 import 'package:wimob_manager/ui/comer_rel.dart';
 import 'package:wimob_manager/ui/graf_cli.dart';

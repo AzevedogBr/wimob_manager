@@ -10,13 +10,12 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   final TextEditingController _cnpjController = new TextEditingController();
-
   final TextEditingController _idController = new TextEditingController();
   String usuario = "";
 
   // criar metodo para os campos
 
-  void mostra_Usuario() {
+  void mostraUsuario() {
     usuario = '${_idController.text}';
   }
 
@@ -89,6 +88,7 @@ class _LoginPageState extends State<LoginPage> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
                   TextField(
+                    obscureText: true,
                     controller: _idController,
                     decoration: InputDecoration(
                         hintText: 'Digite o ID',
@@ -118,7 +118,7 @@ class _LoginPageState extends State<LoginPage> {
                   style: TextStyle(color: Colors.white),
                 ),
                 onPressed: () {
-                  _navigateToHome_page(context);
+                  _navigateToHomePage(context);
                 },
               ),
             ),
@@ -129,8 +129,9 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
-  _navigateToHome_page(BuildContext context) async {
-    Map usuario = await Navigator.push(
+  _navigateToHomePage (BuildContext context) async {
+    // ignore: assignment_to_type, assignment_to_type
+    Map use = await Navigator.push(
       context,
       MaterialPageRoute(builder: (context) => HomePage(id: _idController.text)),
     );

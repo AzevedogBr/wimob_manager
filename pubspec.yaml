@@ -26,12 +26,6 @@ dependencies:
   flutter_speed_dial: ^1.0.9
   firebase_auth: ^0.6.6
   firebase_messaging: ^2.1.0
-  flutter_launcher_icons: ^0.7.0
-
-flutter_icons:
-  android: "launcher_icon"
-  ios: true
-  image_path: assets/logo.png
 
 
 dev_dependencies:
@@ -64,6 +58,8 @@ flutter:
    - assets/ic_volXcli.png
    - assets/ic_venProd.png
    - assets/ic_finan.png
+   - assets/ic_autori.png
+
 
 
   #  - images/a_dot_ham.jpeg
