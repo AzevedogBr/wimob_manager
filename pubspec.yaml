@@ -26,6 +26,7 @@ dependencies:
   flutter_speed_dial: ^1.0.9
   firebase_auth: ^0.6.6
   firebase_messaging: ^2.1.0
+  cloud_firestore: ^0.8.2
 
 
 dev_dependencies:
@@ -59,6 +60,7 @@ flutter:
    - assets/ic_venProd.png
    - assets/ic_finan.png
    - assets/ic_autori.png
+   - assets/ic_n_autori.png
 
 
 
