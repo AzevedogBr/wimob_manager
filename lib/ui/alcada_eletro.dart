@@ -48,9 +48,7 @@ class _AlcadaEletroState extends State<AlcadaEletro>
               alignment: Alignment.center,
             ),
           ),
-//              Icon(
-//              Icons.brush,
-//              color: Colors.white),
+
           backgroundColor: Colors.white,
           //onTap: () => print('SECOND CHILD'),
           label: 'Autorizados',

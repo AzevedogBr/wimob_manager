@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:wimob_manager/ui/home_page.dart';
 
@@ -12,6 +13,14 @@ class _LoginPageState extends State<LoginPage> {
   final TextEditingController _cnpjController = new TextEditingController();
   final TextEditingController _idController = new TextEditingController();
   String usuario = "";
+  bool _salvsenha = false;
+
+
+  void _onChanged (bool value) {
+    setState(() {
+      _salvsenha = value;
+    });
+  }
 
   // criar metodo para os campos
 
@@ -97,6 +106,26 @@ class _LoginPageState extends State<LoginPage> {
                 ],
               ),
             ),
+            Container(
+              width: double.infinity,
+              child: Column(
+                children: <Widget>[
+                  new SwitchListTile(
+                    title: Text('Lembrar usuário',
+                      style: TextStyle(
+                        fontSize: 13.0,
+                        color: Colors.teal.shade900,
+                        fontWeight: FontWeight.w700
+                      ),
+                    ),
+                    activeColor: Colors.teal.shade900,
+                    value: _salvsenha,
+                    onChanged: (bool value){_onChanged(value);},
+                      )
+                ],
+              ),
+
+              ),
 
             Container(
               height: 50.0,
