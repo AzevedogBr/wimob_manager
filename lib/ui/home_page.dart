@@ -213,51 +213,50 @@ class HomePage extends StatelessWidget {
                                         new MaterialPageRoute(
                                             builder: (context) => new Expedicao()));
                                   },
-                                  child: new Container(
+                                  child: Container(
                                     height: 130.0,
-                                    width: 130.0,
-                                    decoration: BoxDecoration(
-                                      color: Colors.transparent,
+                                      width: 130.0,
+                                      
+                                    child: new Card(
+                                      elevation: 4.0,
+                                      shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(20.0),
-                                      border: Border.all(
-                                        color: Colors.grey,
-                                        width: 0.2,
-                                      ),
-                                      //   color: Colors.transparent
-                                    ),
-                                    child: Column(
-                                      mainAxisAlignment: MainAxisAlignment.center,
-                                      children: <Widget>[
-                                        Padding(
-                                          padding: const EdgeInsets.all(8.0),
-                                          child: Row(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.center,
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.center,
+                                         ),
+                                      
+                                      child: Column(
+                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        children: <Widget>[
+                                          Padding(
+                                            padding: const EdgeInsets.all(8.0),
+                                            child: Row(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.center,
+                                              children: <Widget>[
+                                                Image.asset(
+                                                  'assets/entrega.png',
+                                                  height: 40.0,
+                                                  width: 40.0,
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                          Row(
+                                            mainAxisAlignment: MainAxisAlignment.center,
                                             children: <Widget>[
-                                              Image.asset(
-                                                'assets/entrega.png',
-                                                height: 40.0,
-                                                width: 40.0,
+                                              Text(
+                                                'Expedição',
+                                                style: TextStyle(
+                                                  fontSize: 14.0,
+                                                  fontWeight: FontWeight.w500,
+                                                  //fontFamily: slim_jim
+                                                ),
                                               ),
                                             ],
                                           ),
-                                        ),
-                                        Row(
-                                          mainAxisAlignment: MainAxisAlignment.center,
-                                          children: <Widget>[
-                                            Text(
-                                              'Expedição',
-                                              style: TextStyle(
-                                                fontSize: 14.0,
-                                                fontWeight: FontWeight.w500,
-                                                //fontFamily: slim_jim
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ],
+                                        ],
+                                      ),
                                     ),
                                   ),
                                 ),
@@ -279,47 +278,47 @@ class HomePage extends StatelessWidget {
                                         new MaterialPageRoute(
                                             builder: (context) => new Financeiro()));
                                   },
-                                  child: new Container(
-                                    height: 130.0,
-                                    width: 130.0,
-                                    decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(20.0),
-                                        border: Border.all(
-                                          color: Colors.grey,
-                                          width: 0.2,
-                                        ),
-                                        color: Colors.white24),
-                                    child: Column(
-                                      mainAxisAlignment: MainAxisAlignment.center,
-                                      children: <Widget>[
-                                        Padding(
-                                          padding: const EdgeInsets.all(8.0),
-                                          child: Row(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.center,
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.center,
+                                  child: Container(
+                                     height: 130.0,
+                                      width: 130.0,
+                                      
+                                    child: new Card(
+                                      elevation: 4.0,
+                                      shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(20.0),
+                                         ),
+                                      child: Column(
+                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        children: <Widget>[
+                                          Padding(
+                                            padding: const EdgeInsets.all(8.0),
+                                            child: Row(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.center,
+                                              children: <Widget>[
+                                                Image.asset(
+                                                  'assets/finan.png',
+                                                  height: 40.0,
+                                                  width: 40.0,
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                          Row(
+                                            mainAxisAlignment: MainAxisAlignment.center,
                                             children: <Widget>[
-                                              Image.asset(
-                                                'assets/finan.png',
-                                                height: 40.0,
-                                                width: 40.0,
+                                              Text(
+                                                'Financeiro',
+                                                style: TextStyle(
+                                                    fontSize: 14.0,
+                                                    fontWeight: FontWeight.w500),
                                               ),
                                             ],
                                           ),
-                                        ),
-                                        Row(
-                                          mainAxisAlignment: MainAxisAlignment.center,
-                                          children: <Widget>[
-                                            Text(
-                                              'Financeiro',
-                                              style: TextStyle(
-                                                  fontSize: 14.0,
-                                                  fontWeight: FontWeight.w500),
-                                            ),
-                                          ],
-                                        ),
-                                      ],
+                                        ],
+                                      ),
                                     ),
                                   ),
                                 ),
@@ -345,47 +344,47 @@ class HomePage extends StatelessWidget {
                                         new MaterialPageRoute(
                                             builder: (context) => new Comercial()));
                                   },
-                                  child: new Container(
-                                    height: 130.0,
-                                    width: 130.0,
-                                    decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(20.0),
-                                        border: Border.all(
-                                          color: Colors.grey,
-                                          width: 0.2,
-                                        ),
-                                        color: Colors.white24),
-                                    child: Column(
-                                      mainAxisAlignment: MainAxisAlignment.center,
-                                      children: <Widget>[
-                                        Padding(
-                                          padding: const EdgeInsets.all(8.0),
-                                          child: Row(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.center,
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.center,
+                                  child: Container(
+                                     height: 130.0,
+                                      width: 130.0,
+                                      
+                                    child: new Card(
+                                      elevation: 4.0,
+                                      shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(20.0),
+                                         ),
+                                      child: Column(
+                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        children: <Widget>[
+                                          Padding(
+                                            padding: const EdgeInsets.all(8.0),
+                                            child: Row(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.center,
+                                              children: <Widget>[
+                                                Image.asset(
+                                                  'assets/vendas.png',
+                                                  height: 40.0,
+                                                  width: 40.0,
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                          Row(
+                                            mainAxisAlignment: MainAxisAlignment.center,
                                             children: <Widget>[
-                                              Image.asset(
-                                                'assets/vendas.png',
-                                                height: 40.0,
-                                                width: 40.0,
+                                              Text(
+                                                'Comercial',
+                                                style: TextStyle(
+                                                    fontSize: 14.0,
+                                                    fontWeight: FontWeight.w500),
                                               ),
                                             ],
                                           ),
-                                        ),
-                                        Row(
-                                          mainAxisAlignment: MainAxisAlignment.center,
-                                          children: <Widget>[
-                                            Text(
-                                              'Comercial',
-                                              style: TextStyle(
-                                                  fontSize: 14.0,
-                                                  fontWeight: FontWeight.w500),
-                                            ),
-                                          ],
-                                        ),
-                                      ],
+                                        ],
+                                      ),
                                     ),
                                   ),
                                 ),
@@ -407,47 +406,47 @@ class HomePage extends StatelessWidget {
                                         new MaterialPageRoute(
                                             builder: (context) => new Config()));
                                   },
-                                  child: new Container(
-                                    height: 130.0,
-                                    width: 130.0,
-                                    decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(20.0),
-                                        border: Border.all(
-                                          color: Colors.grey,
-                                          width: 0.2,
-                                        ),
-                                        color: Colors.white24),
-                                    child: Column(
-                                      mainAxisAlignment: MainAxisAlignment.center,
-                                      children: <Widget>[
-                                        Padding(
-                                          padding: const EdgeInsets.all(8.0),
-                                          child: Row(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.center,
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.center,
+                                  child: Container(
+                                     height: 130.0,
+                                      width: 130.0,
+                                      
+                                    child: new Card(
+                                      elevation: 4.0,
+                                      shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(20.0),
+                                         ),
+                                      child: Column(
+                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        children: <Widget>[
+                                          Padding(
+                                            padding: const EdgeInsets.all(8.0),
+                                            child: Row(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.center,
+                                              children: <Widget>[
+                                                Image.asset(
+                                                  'assets/config.png',
+                                                  height: 40.0,
+                                                  width: 40.0,
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                          Row(
+                                            mainAxisAlignment: MainAxisAlignment.center,
                                             children: <Widget>[
-                                              Image.asset(
-                                                'assets/config.png',
-                                                height: 40.0,
-                                                width: 40.0,
+                                              Text(
+                                                'Configuração',
+                                                style: TextStyle(
+                                                    fontSize: 14.0,
+                                                    fontWeight: FontWeight.w500),
                                               ),
                                             ],
                                           ),
-                                        ),
-                                        Row(
-                                          mainAxisAlignment: MainAxisAlignment.center,
-                                          children: <Widget>[
-                                            Text(
-                                              'Configuração',
-                                              style: TextStyle(
-                                                  fontSize: 14.0,
-                                                  fontWeight: FontWeight.w500),
-                                            ),
-                                          ],
-                                        ),
-                                      ],
+                                        ],
+                                      ),
                                     ),
                                   ),
                                 ),
@@ -463,7 +462,7 @@ class HomePage extends StatelessWidget {
             ),
             Padding(
               padding: EdgeInsets.only(
-                  left: 0.0, top: 40.0, right: 0.0, bottom: 0.0),
+                  left: 0.0, top: 150.0, right: 0.0, bottom: 0.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
 
@@ -477,51 +476,51 @@ class HomePage extends StatelessWidget {
                               new MaterialPageRoute(
                                   builder: (context) => new AlcadaEletro()));
                         },
-                        child: new Container(
-                          height: 80.0,
-                          width: 290.0,
-                          decoration: BoxDecoration(
-                            color: Colors.grey.shade100,
-                            borderRadius: BorderRadius.circular(20.0),
-                            border: Border.all(
-                              color: Colors.grey,
-                              width: 0.2,
-                            ),
-                            //   color: Colors.transparent
-                          ),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: <Widget>[
-                              Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Row(
-                                  mainAxisAlignment:
-                                  MainAxisAlignment.center,
-                                  crossAxisAlignment:
-                                  CrossAxisAlignment.center,
+                        child: Container(
+                          height: 90.0,
+                            width: 290.0,
+                         
+                          
+                            
+                          child: new Card(
+                            elevation: 4.0,
+                                      shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(20.0),
+                                         ),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: <Widget>[
+                                Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Row(
+                                    mainAxisAlignment:
+                                    MainAxisAlignment.center,
+                                    crossAxisAlignment:
+                                    CrossAxisAlignment.center,
+                                    children: <Widget>[
+                                      Image.asset(
+                                        'assets/ic_autori.png',
+                                        height: 40.0,
+                                        width: 40.0,
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
                                   children: <Widget>[
-                                    Image.asset(
-                                      'assets/ic_autori.png',
-                                      height: 40.0,
-                                      width: 40.0,
+                                    Text(
+                                      'Autorizações',
+                                      style: TextStyle(
+                                        fontSize: 16.0,
+                                        fontWeight: FontWeight.w500,
+                                        //fontFamily: slim_jim
+                                      ),
                                     ),
                                   ],
                                 ),
-                              ),
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: <Widget>[
-                                  Text(
-                                    'Autorizações',
-                                    style: TextStyle(
-                                      fontSize: 16.0,
-                                      fontWeight: FontWeight.w500,
-                                      //fontFamily: slim_jim
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
                         ),
                       ),
@@ -536,45 +535,7 @@ class HomePage extends StatelessWidget {
       ),
 
 
-// Barra inferior
 
-//      bottomNavigationBar: new Theme(
-//        data: Theme.of(context).copyWith(
-//            // sets the background color of the `BottomNavigationBar`
-//            canvasColor: Colors.teal,
-//            // sets the active color of the `BottomNavigationBar` if `Brightness` is light
-//            primaryColor: Colors.white,
-//            textTheme: Theme.of(context)
-//                .textTheme
-//                .copyWith(caption: new TextStyle(color: Colors.white))),
-//        // sets the inactive color of the `BottomNavigationBar`
-//
-//        //Barra Inferior
-//        child: new BottomNavigationBar(
-//          type: BottomNavigationBarType.fixed,
-//          currentIndex: 0,
-//          items: [
-//            new BottomNavigationBarItem(
-//              icon: new Icon(Icons.add),
-//              title: new Text("Add"),
-//            ),
-//            new BottomNavigationBarItem(
-//              icon: new Icon(Icons.delete),
-//              title: new Text("Delete"),
-//            )
-//          ],
-//        ),
-//      ),
-
-
-//    Botão flutuante adição
-//      floatingActionButton: FloatingActionButton(
-//        // botão flutuante
-//        onPressed: null,
-//        child: Icon(Icons.add),
-//        backgroundColor: Colors.teal,
-//      ),
-      //        backgroundColor: Colors.teal
     );
   }
 }
