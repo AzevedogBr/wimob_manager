@@ -50,60 +50,60 @@ class _ComercialState extends State<Comercial> {
                                       builder: (context) => new GrafCli()));
                             },
                             child: Container(
-                              height: 70.0,
-                              width: 350.0,
-                              decoration: BoxDecoration(
-                                //color: Colors.teal,
-                                borderRadius: BorderRadius.circular(20.0),
-                                border: Border.all(
-                                  color: Colors.black,
-                                  width: 0.2,
-                                ),
-                              ),
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: <Widget>[
-                                  Padding(
-                                    padding: const EdgeInsets.all(2.0),
-                                    child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      //crossAxisAlignment: CrossAxisAlignment.center,
+                              height: 80.0,
+                                width: 350.0,
+                                
+                              child: Card(
+                                elevation: 4.0,
+                                      shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(20.0),
+                                         ),
+                                
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: <Widget>[
+                                    Padding(
+                                      padding: const EdgeInsets.all(2.0),
+                                      child: Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        //crossAxisAlignment: CrossAxisAlignment.center,
+                                        children: <Widget>[
+                                          Container(
+                                            decoration: BoxDecoration(
+                                                color: Colors.teal,
+                                                borderRadius:
+                                                    BorderRadius.circular(20.0),
+                                                border: Border.all(
+                                                    color: Colors.grey,
+                                                    width: 0.2)),
+                                            child: Padding(
+                                                padding:
+                                                    const EdgeInsets.all(4.0),
+                                                child: Image.asset(
+                                                  'assets/ic_cli.png',
+                                                  height: 30.0,
+                                                  width: 30.0,
+                                                  alignment: Alignment.center,
+                                                )),
+                                          )
+                                        ],
+                                      ),
+                                    ),
+                                    Row(
+                                      mainAxisAlignment: MainAxisAlignment.center,
                                       children: <Widget>[
-                                        Container(
-                                          decoration: BoxDecoration(
-                                              color: Colors.teal,
-                                              borderRadius:
-                                                  BorderRadius.circular(20.0),
-                                              border: Border.all(
-                                                  color: Colors.grey,
-                                                  width: 0.2)),
-                                          child: Padding(
-                                              padding:
-                                                  const EdgeInsets.all(4.0),
-                                              child: Image.asset(
-                                                'assets/ic_cli.png',
-                                                height: 30.0,
-                                                width: 30.0,
-                                                alignment: Alignment.center,
-                                              )),
-                                        )
+                                        Text(
+                                          'Clientes',
+                                          style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 16.0,
+                                              fontWeight: FontWeight.w400),
+                                        ),
                                       ],
                                     ),
-                                  ),
-                                  Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: <Widget>[
-                                      Text(
-                                        'Clientes',
-                                        style: TextStyle(
-                                            color: Colors.black,
-                                            fontSize: 16.0,
-                                            fontWeight: FontWeight.w400),
-                                      ),
-                                    ],
-                                  ),
-                                ],
+                                  ],
+                                ),
                               ),
                             ),
                           ),
@@ -126,59 +126,58 @@ class _ComercialState extends State<Comercial> {
                                       builder: (context) => new ComerVend()));
                             },
                             child: Container(
-                              height: 70.0,
-                              width: 350.0,
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(20.0),
-                                  border: Border.all(
-                                    color: Colors.black,
-                                    width: 0.2,
-                                  ),
-                               //   color: Colors.orange.shade300
-                              ),
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: <Widget>[
-                                  Padding(
-                                    padding: const EdgeInsets.all(2.0),
-                                    child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      //crossAxisAlignment: CrossAxisAlignment.center,
-                                      children: <Widget>[
-                                        Container(
-                                          decoration: BoxDecoration(
-                                            color: Colors.orange,
-                                            borderRadius:
-                                                BorderRadius.circular(20.0),
+                              height: 80.0,
+                                width: 350.0,
+                                
+                              child: Card(
+                                elevation: 4.0,
+                                      shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(20.0),
+                                         ),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: <Widget>[
+                                    Padding(
+                                      padding: const EdgeInsets.all(2.0),
+                                      child: Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        
+                                        children: <Widget>[
+                                          Container(
+                                            decoration: BoxDecoration(
+                                              color: Colors.orange,
+                                              borderRadius:
+                                                  BorderRadius.circular(20.0),
 //
-                                          ),
-                                          child: Padding(
-                                              padding:
-                                                  const EdgeInsets.all(4.0),
-                                              child: Image.asset(
-                                                'assets/ic_ven.png',
-                                                height: 30.0,
-                                                width: 30.0,
-                                                alignment: Alignment.center,
-                                              )),
-                                        )
+                                            ),
+                                            child: Padding(
+                                                padding:
+                                                    const EdgeInsets.all(4.0),
+                                                child: Image.asset(
+                                                  'assets/ic_ven.png',
+                                                  height: 30.0,
+                                                  width: 30.0,
+                                                  alignment: Alignment.center,
+                                                )),
+                                          )
+                                        ],
+                                      ),
+                                    ),
+                                    Row(
+                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      children: <Widget>[
+                                        Text(
+                                          'Vendedor',
+                                          style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 16.0,
+                                              fontWeight: FontWeight.w400),
+                                        ),
                                       ],
                                     ),
-                                  ),
-                                  Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: <Widget>[
-                                      Text(
-                                        'Vendedor',
-                                        style: TextStyle(
-                                            color: Colors.black,
-                                            fontSize: 16.0,
-                                            fontWeight: FontWeight.w400),
-                                      ),
-                                    ],
-                                  ),
-                                ],
+                                  ],
+                                ),
                               ),
                             ),
                           ),
@@ -202,59 +201,58 @@ class _ComercialState extends State<Comercial> {
                               );
                             },
                             child: Container(
-                              height: 70.0,
-                              width: 350.0,
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(20.0),
-                                  border: Border.all(
-                                    color: Colors.black,
-                                    width: 0.2,
-                                  ),
-                                //  color: Colors.pinkAccent
-                              ),
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: <Widget>[
-                                  Padding(
-                                    padding: const EdgeInsets.all(2.0),
-                                    child: Row(
-                                      mainAxisAlignment: MainAxisAlignment.center,
-                                      //crossAxisAlignment: CrossAxisAlignment.center,
-                                      children: <Widget>[
-                                        Container(
-                                        decoration: BoxDecoration(
-                                          color: Colors.lightBlue.shade300,
-                                          borderRadius:
-                                              BorderRadius.circular(20.0),
-                                          border: Border.all(
-                                              color: Colors.grey, width: 0.2),
-                                        ),
-                                          child: Padding(
-                                            padding: const EdgeInsets.all(4.0),
-                                            child: Image.asset(
-                                              'assets/ic_prod.png',
-                                              height: 30.0,
-                                              width: 30.0,
-                                              alignment: Alignment.center,
-                                            ),
+                              height: 80.0,
+                                width: 350.0,
+                                
+                              child: Card(
+                                elevation: 4.0,
+                                      shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(20.0),
+                                         ),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: <Widget>[
+                                    Padding(
+                                      padding: const EdgeInsets.all(2.0),
+                                      child: Row(
+                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        //crossAxisAlignment: CrossAxisAlignment.center,
+                                        children: <Widget>[
+                                          Container(
+                                          decoration: BoxDecoration(
+                                            color: Colors.lightBlue.shade300,
+                                            borderRadius:
+                                                BorderRadius.circular(20.0),
+                                            border: Border.all(
+                                                color: Colors.grey, width: 0.2),
                                           ),
-                                        )
+                                            child: Padding(
+                                              padding: const EdgeInsets.all(4.0),
+                                              child: Image.asset(
+                                                'assets/ic_prod.png',
+                                                height: 30.0,
+                                                width: 30.0,
+                                                alignment: Alignment.center,
+                                              ),
+                                            ),
+                                          )
+                                        ],
+                                      ),
+                                    ),
+                                    Row(
+                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      children: <Widget>[
+                                        Text(
+                                          'Produtos',
+                                          style: TextStyle(
+                                              fontSize: 16.0,
+                                              fontWeight: FontWeight.w400,
+                                              color: Colors.black),
+                                        ),
                                       ],
                                     ),
-                                  ),
-                                  Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: <Widget>[
-                                      Text(
-                                        'Produtos',
-                                        style: TextStyle(
-                                            fontSize: 16.0,
-                                            fontWeight: FontWeight.w400,
-                                            color: Colors.black),
-                                      ),
-                                    ],
-                                  ),
-                                ],
+                                  ],
+                                ),
                               ),
                             ),
                           ),

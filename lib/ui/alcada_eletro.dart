@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 import 'package:gradient_app_bar/gradient_app_bar.dart';
+import 'package:wimob_manager/ui/alcada_sim.dart';
 
 class AlcadaEletro extends StatefulWidget {
   static String tag = 'alcada-eletro';
@@ -50,6 +51,12 @@ class _AlcadaEletroState extends State<AlcadaEletro>
           ),
 
           backgroundColor: Colors.white,
+        onTap: () {
+           Navigator.push(
+              context,
+                 new MaterialPageRoute(
+                    builder: (context) => new AlcadaSim()));
+                },
           //onTap: () => print('SECOND CHILD'),
           label: 'Autorizados',
           labelStyle: TextStyle(fontWeight: FontWeight.w500),
