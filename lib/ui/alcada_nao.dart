@@ -2,14 +2,14 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:gradient_app_bar/gradient_app_bar.dart';
 
-class AlcadaSim extends StatefulWidget {
-  static String tag = 'alcada-sim';
+class AlcadaNao extends StatefulWidget {
+  static String tag = 'alcada-nao';
 
   @override
-  _AlcadaSim createState() => _AlcadaSim();
+  _AlcadaNao createState() => _AlcadaNao();
 }
 
-class _AlcadaSim extends  State<AlcadaSim>  {
+class _AlcadaNao extends  State<AlcadaNao>  {
  
 
   @override
@@ -19,7 +19,7 @@ class _AlcadaSim extends  State<AlcadaSim>  {
         backgroundColorStart: Colors.teal.shade700,
         backgroundColorEnd: Colors.teal.shade900,
         title: Text(
-          "Autorizados",
+          "Não Autorizados",
           style: TextStyle(
               fontSize: 20.0,
               fontWeight: FontWeight.w700,
@@ -37,7 +37,7 @@ class _AlcadaSim extends  State<AlcadaSim>  {
       stream: Firestore.instance
           .collection('Autorizacao')
           .where('Check', isEqualTo: true)
-          .where('AutSim', isEqualTo: true)
+          .where('AutSim', isEqualTo: false)
           .snapshots(),
       builder: (context, snapshot) {
         if (!snapshot.hasData) return LinearProgressIndicator();
@@ -62,7 +62,7 @@ class _AlcadaSim extends  State<AlcadaSim>  {
       padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 2.0),
       child: Container(
         child: Card(
-          color: Colors.green.shade100,
+          color: Colors.red.shade200,
           elevation: 4.0,
               shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(20.0),
@@ -105,14 +105,42 @@ class _AlcadaSim extends  State<AlcadaSim>  {
                   fontSize: 15.0,
                   fontStyle: FontStyle.italic),
             ),
-     
-//          onTap: () => Firestore.instance.runTransaction((transaction) async {
-//            final freshSnapshot = await transaction.get(record.reference);
-//            final fresh = Record.fromSnapshot(freshSnapshot);
-//
-//            await transaction
-//                .update(record.reference, {'votes': fresh.votes + 1});
-//          }),
+            onTap: () {
+              showDialog(
+                context: context,
+                builder: (context){
+                  return AlertDialog(
+                    titlePadding:EdgeInsets.all(8.0), 
+                    title: new Column(
+                        children: <Widget>[
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            Text('Motivo Negativa', 
+                            style: TextStyle(
+                              fontSize: 18.0,
+                              color: Colors.red
+                            ),
+                            )
+                          ],
+
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            Text(record.obs,
+                            style: TextStyle(
+                              fontSize: 12.0
+                            ),)
+                          ],
+                        )
+                      ],
+                    ),
+                  );
+                }
+              );
+            },
+
           ),
         ),
       ),

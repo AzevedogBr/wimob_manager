@@ -79,17 +79,6 @@ class _LoginPageState extends State<LoginPage> {
                 ],
               ),
             ),
-
-        //linha divisoria
-
-//            Padding(
-//              padding: const EdgeInsets.all(5.0),
-//              child: Container(
-//                height: 0.1,
-//                color: Colors.black,
-//              ),
-//            ),
-
             Container(
               width: double.infinity,
               color: Colors.white,
@@ -134,7 +123,6 @@ class _LoginPageState extends State<LoginPage> {
                 gradient: LinearGradient(
                   colors: [
                     const Color(0xFF0a4142),
-//                      Colors.teal.shade900,
                     Colors.teal.shade800,
                   ],
                   begin: FractionalOffset.bottomLeft,

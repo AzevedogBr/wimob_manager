@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 import 'package:gradient_app_bar/gradient_app_bar.dart';
 import 'package:wimob_manager/ui/alcada_sim.dart';
+import 'package:wimob_manager/ui/alcada_nao.dart';
 
 class AlcadaEletro extends StatefulWidget {
   static String tag = 'alcada-eletro';
@@ -36,6 +37,13 @@ class _AlcadaEletroState extends State<AlcadaEletro>
             ),
           ),
           backgroundColor: Colors.white,
+          onTap: () {
+           Navigator.push(
+              context,
+                 new MaterialPageRoute(
+                    builder: (context) => new AlcadaNao()));
+                },
+
           //onTap: () => print('FIRST CHILD'),
           label: 'Não Autorizados',
           labelStyle: TextStyle(fontWeight: FontWeight.w500),
@@ -112,181 +120,202 @@ class _AlcadaEletroState extends State<AlcadaEletro>
 
     return Padding(
       key: ValueKey(record.name),
-      padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 5.0),
+      padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 2.0),
       child: Container(
-        decoration: BoxDecoration(
-          border: Border.all(
-              color: Colors.grey),
-          borderRadius: BorderRadius.circular(10.0),
-        ),
-        child: ListTile(
-          title: Text(
-            record.setor,
-            style: TextStyle(
-                color: Colors.red.shade500,
-                fontWeight: FontWeight.w500,
-                fontSize: 14.0
-                ),
-          ),
-          subtitle: Text(
-            record.solic,
-            style: TextStyle(
-                fontSize: 12.0,
-                fontWeight: FontWeight.w500,
-                color: Colors.black),
-          ),
-          leading: Container(
-            alignment: Alignment.center,
-            height: 50.0,
-            width: 80.0,
-            child: Text(
-              record.name,
+        child: Card(
+          elevation: 4.0,
+              shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(20.0),
+              ),
+          child: ListTile(
+            title: Text(
+              record.setor,
               style: TextStyle(
+                  color: Colors.red.shade500,
+                  fontWeight: FontWeight.w500,
+                  fontSize: 14.0
+                  ),
+            ),
+            subtitle: Text(
+              record.solic,
+              style: TextStyle(
+                  fontSize: 12.0,
+                  fontWeight: FontWeight.w500,
+                  color: Colors.black),
+            ),
+            leading: Container(
+              alignment: Alignment.center,
+              height: 50.0,
+              width: 80.0,
+              child: Text(
+                record.name,
+                style: TextStyle(
+                    fontWeight: FontWeight.w800,
+                    color: Colors.teal.shade800,
+                    fontSize: 15.0,
+                    fontStyle: FontStyle.italic),
+              ),
+            ),
+            trailing: Text('R\$'+
+              record.valor.toString(),
+              style: TextStyle(
+                  decoration: TextDecoration.underline,
                   fontWeight: FontWeight.w800,
-                  color: Colors.teal.shade800,
+                  color: Colors.red.shade800,
                   fontSize: 15.0,
                   fontStyle: FontStyle.italic),
             ),
-          ),
-          trailing: Text('R\$'+
-            record.valor.toString(),
-            style: TextStyle(
-                decoration: TextDecoration.underline,
-                fontWeight: FontWeight.w800,
-                color: Colors.red.shade800,
-                fontSize: 15.0,
-                fontStyle: FontStyle.italic),
-          ),
-          onTap: () {
-            _obsController.clear();
-            showDialog(
-                barrierDismissible: false,
-                context: context,
-                builder: (context) {
-                  return AlertDialog(
-                    contentPadding: const EdgeInsets.all(16.0),
-                    title: new Column(
-                      children: <Widget>[
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: <Widget>[Text(record.name)],
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(
-                              bottom: 8.0, top: 0.0, right: 0.0, left: 0.0),
-                          child: Row(
+            onTap: () {
+              _obsController.clear();
+              showDialog(
+                  barrierDismissible: false,
+                  context: context,
+                  builder: (context) {
+                    return AlertDialog(
+                      contentPadding: const EdgeInsets.all(16.0),
+                      title: new Column(
+                        children: <Widget>[
+                          Row(
                             mainAxisAlignment: MainAxisAlignment.start,
+                            children: <Widget>[Text(record.name)],
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(
+                                bottom: 8.0, top: 0.0, right: 0.0, left: 0.0),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: <Widget>[
+                                Text(
+                                  record.setor,
+                                  style: TextStyle(
+                                      fontSize: 14.0, color: Colors.red),
+                                )
+                              ],
+                            ),
+                          ),
+                          Row(
                             children: <Widget>[
-                              Text(
-                                record.setor,
-                                style: TextStyle(
-                                    fontSize: 14.0, color: Colors.red),
+                              Flexible(
+                                child: Text('Solicitação: '
+                                  +record.solic,
+                                  style: TextStyle(
+                                    fontSize: 14.0,
+                                    
+                                  )
+                                ),
                               )
                             ],
+
                           ),
+                          Padding(
+                            padding: const EdgeInsets.only(
+                              bottom: 0.0, top: 10.0, right: 0.0, left: 0.0
+                            ),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: <Widget>[
+                                Text("Total: R\$ "),
+                                Text(
+                                  record.valor.toString(),
+                                  style: TextStyle(
+                                    color: Colors.red,
+                                    decoration: TextDecoration.underline),
+                                )
+                              ],
+                            ),
+                          ),
+                          Row(
+                            children: <Widget>[
+                              Expanded(
+                                  child: TextField(
+                                controller: _obsController,
+                                autofocus: true,
+                                decoration: new InputDecoration(
+                                    labelText: 'Observação',
+                                    hintText: 'Digite uma observação'),
+                              ))
+                            ],
+                          )
+                        ],
+                      ),
+                      actions: <Widget>[
+                        Container(
+                          height: 20.0,
+                          width: 60.0,
+                          decoration: BoxDecoration(
+                            //color: Colors.teal,
+                            borderRadius: BorderRadius.circular(10.0),
+                            border: Border.all(
+                              color: Colors.black,
+                              width: 0.1,
+                            ),
+                          ),
+                          child: FlatButton(
+                              onPressed: () {
+                                Firestore.instance
+                                    .runTransaction((transaction) async {
+                                  final freshSnapshot =
+                                      await transaction.get(record.reference);
+                                  final fresh = Record.fromSnapshot(freshSnapshot);
+                                  await transaction.update(record.reference, {
+                                    'AutSim': fresh.autsim = true,
+                                    'Check': fresh.check = true,
+                                    'Obs': fresh.obs = _obsController.text
+                                  });
+                                  Navigator.of(context).pop();
+                                });
+                              },
+                              child: new Text("Sim")),
                         ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: <Widget>[
-                            Text("Total: R\$ "),
-                            Text(
-                              record.valor.toString(),
-                              style: TextStyle(color: Colors.red),
-                            )
-                          ],
+                        Container(
+                          height: 20.0,
+                          width: 60.0,
+                          decoration: BoxDecoration(
+                            //color: Colors.teal,
+                            borderRadius: BorderRadius.circular(10.0),
+                            border: Border.all(
+                              color: Colors.black,
+                              width: 0.1,
+                            ),
+                          ),
+                          child: FlatButton(
+                              onPressed: () {
+                                Firestore.instance
+                                    .runTransaction((transaction) async {
+                                  final freshSnapshot =
+                                      await transaction.get(record.reference);
+                                  final fresh = Record.fromSnapshot(freshSnapshot);
+                                  await transaction.update(record.reference, {
+                                    'AutSim': fresh.autsim = false,
+                                    'Check': fresh.check = true,
+                                    'Obs': fresh.obs = _obsController.text
+                                  });
+                                  Navigator.of(context).pop();
+                                });
+                              },
+                              child: new Text("Não")),
                         ),
-                        Row(
-                          children: <Widget>[
-                            Expanded(
-                                child: TextField(
-                              controller: _obsController,
-                              autofocus: true,
-                              decoration: new InputDecoration(
-                                  labelText: 'Observação',
-                                  hintText: 'Digite uma observação'),
-                            ))
-                          ],
+                        Container(
+                          height: 20.0,
+                          width: 90.0,
+                          decoration: BoxDecoration(
+                            //color: Colors.teal,
+                            borderRadius: BorderRadius.circular(10.0),
+                            border: Border.all(
+                              color: Colors.black,
+                              width: 0.1,
+                            ),
+                          ),
+                          child: FlatButton(
+                              onPressed: (){
+                                Navigator.of(context).pop();
+                              },
+                              child: new Text('Cancelar')),
                         )
                       ],
-                    ),
-                    actions: <Widget>[
-                      Container(
-                        height: 20.0,
-                        width: 60.0,
-                        decoration: BoxDecoration(
-                          //color: Colors.teal,
-                          borderRadius: BorderRadius.circular(10.0),
-                          border: Border.all(
-                            color: Colors.black,
-                            width: 0.1,
-                          ),
-                        ),
-                        child: FlatButton(
-                            onPressed: () {
-                              Firestore.instance
-                                  .runTransaction((transaction) async {
-                                final freshSnapshot =
-                                    await transaction.get(record.reference);
-                                final fresh = Record.fromSnapshot(freshSnapshot);
-                                await transaction.update(record.reference, {
-                                  'AutSim': fresh.autsim = true,
-                                  'Check': fresh.check = true,
-                                  'Obs': fresh.obs = _obsController.text
-                                });
-                                Navigator.of(context).pop();
-                              });
-                            },
-                            child: new Text("Sim")),
-                      ),
-                      Container(
-                        height: 20.0,
-                        width: 60.0,
-                        decoration: BoxDecoration(
-                          //color: Colors.teal,
-                          borderRadius: BorderRadius.circular(10.0),
-                          border: Border.all(
-                            color: Colors.black,
-                            width: 0.1,
-                          ),
-                        ),
-                        child: FlatButton(
-                            onPressed: () {
-                              Firestore.instance
-                                  .runTransaction((transaction) async {
-                                final freshSnapshot =
-                                    await transaction.get(record.reference);
-                                final fresh = Record.fromSnapshot(freshSnapshot);
-                                await transaction.update(record.reference, {
-                                  'AutSim': fresh.autsim = false,
-                                  'Check': fresh.check = true,
-                                  'Obs': fresh.obs = _obsController.text
-                                });
-                                Navigator.of(context).pop();
-                              });
-                            },
-                            child: new Text("Não")),
-                      ),
-                      Container(
-                        height: 20.0,
-                        width: 90.0,
-                        decoration: BoxDecoration(
-                          //color: Colors.teal,
-                          borderRadius: BorderRadius.circular(10.0),
-                          border: Border.all(
-                            color: Colors.black,
-                            width: 0.1,
-                          ),
-                        ),
-                        child: FlatButton(
-                            onPressed: (){
-                              Navigator.of(context).pop();
-                            },
-                            child: new Text('Cancelar')),
-                      )
-                    ],
-                  );
-                });
-          },
+                    );
+                  });
+            },
 
 //          onTap: () => Firestore.instance.runTransaction((transaction) async {
 //            final freshSnapshot = await transaction.get(record.reference);
@@ -295,6 +324,7 @@ class _AlcadaEletroState extends State<AlcadaEletro>
 //            await transaction
 //                .update(record.reference, {'votes': fresh.votes + 1});
 //          }),
+          ),
         ),
       ),
     );

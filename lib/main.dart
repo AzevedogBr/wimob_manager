@@ -10,16 +10,20 @@ class MainActivity extends StatefulWidget {
 }
 
 class _MainActivityState extends State<MainActivity> {
+  FirebaseMessaging firebaseMessaging = new FirebaseMessaging();
+
   final routes = <String, WidgetBuilder>{
     LoginPage.tag: (context) => LoginPage(),
 
   };
 
   String textValue = '';
-  FirebaseMessaging firebaseMessaging = new FirebaseMessaging();
+  
+
 
   @override
   void initState() {
+    super.initState();
     firebaseMessaging.configure(
       onLaunch: (Map<String, dynamic> msg) {
         print(msg);
@@ -32,24 +36,25 @@ class _MainActivityState extends State<MainActivity> {
       },
     );
 
-    firebaseMessaging.requestNotificationPermissions(
-        const IosNotificationSettings(sound: true, alert: true, badge: true));
-    firebaseMessaging.onIosSettingsRegistered
-        .listen((IosNotificationSettings setting) {
-      print('Ios setting Registed');
-    });
+     firebaseMessaging.requestNotificationPermissions(
+         const IosNotificationSettings(sound: true, alert: true, badge: true));
+     firebaseMessaging.onIosSettingsRegistered
+         .listen((IosNotificationSettings setting) {
+       print('Ios setting Registed');
+     });
     firebaseMessaging.getToken().then((token) {
-      update(token);
+      print(token);
     });
 
-    super.initState();
+
   }
 
-  update(String token) {
-    print(token);
-    textValue = token;
-    setState(() {});
+   update(String token) {
+     print(token);
+     textValue = token;
+     setState(() {});
   }
+
 
   @override
   Widget build(BuildContext context) {
@@ -58,6 +63,7 @@ class _MainActivityState extends State<MainActivity> {
       home: LoginPage(),
       routes: routes,
     );
+
   }
 }
 

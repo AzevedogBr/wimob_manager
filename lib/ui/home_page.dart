@@ -13,7 +13,7 @@ class HomePage extends StatelessWidget {
   _showSnackBar(){
     print('Você tem novas autorizações pendentes');
     final snackBar = new SnackBar(
-        content: new Text('Você tem autorizações pendentes!')
+        content: new Text('$id')
     );
 
     _scaffoldKey.currentState.showSnackBar(snackBar);
