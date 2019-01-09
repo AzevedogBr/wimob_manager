@@ -43,7 +43,9 @@ class _GrafVenState extends State<GrafVen> {
   }
   Widget _buildListItem(BuildContext context, DocumentSnapshot data){
     final record = Record.fromSnapshot(data);
+    
     var dados = [
+      Vendas(record.vend1, record.valor1),
       Vendas(record.vend1, record.valor1),
 
     ];
