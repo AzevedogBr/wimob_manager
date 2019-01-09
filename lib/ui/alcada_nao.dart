@@ -5,12 +5,13 @@ import 'package:gradient_app_bar/gradient_app_bar.dart';
 class AlcadaNao extends StatefulWidget {
   static String tag = 'alcada-nao';
 
+
   @override
   _AlcadaNao createState() => _AlcadaNao();
 }
 
 class _AlcadaNao extends  State<AlcadaNao>  {
- 
+  
 
   @override
   Widget build(BuildContext context) {
@@ -29,6 +30,7 @@ class _AlcadaNao extends  State<AlcadaNao>  {
       ),
       body: _buildBody(context),
       
+      
     );
   }
 
@@ -40,7 +42,8 @@ class _AlcadaNao extends  State<AlcadaNao>  {
           .where('AutSim', isEqualTo: false)
           .snapshots(),
       builder: (context, snapshot) {
-        if (!snapshot.hasData) return LinearProgressIndicator();
+        if (!snapshot.hasData) 
+        return LinearProgressIndicator();
 
         return _buildList(context, snapshot.data.documents);
       },
@@ -116,7 +119,7 @@ class _AlcadaNao extends  State<AlcadaNao>  {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
-                            Text('Motivo Negativa', 
+                            Text('Motivo da Negativa', 
                             style: TextStyle(
                               fontSize: 18.0,
                               color: Colors.red
@@ -128,10 +131,13 @@ class _AlcadaNao extends  State<AlcadaNao>  {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
-                            Text(record.obs,
-                            style: TextStyle(
-                              fontSize: 12.0
-                            ),)
+                                Flexible(
+                                child: Text(record.obs,
+                                style: TextStyle(
+                                  fontSize: 12.0
+                                ),),
+                              ),
+                            
                           ],
                         )
                       ],

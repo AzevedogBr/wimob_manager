@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:gradient_app_bar/gradient_app_bar.dart';
-import 'package:wimob_manager/ui/comer_vend.dart';
+// import 'package:wimob_manager/ui/comer_vend.dart';
 import 'package:wimob_manager/ui/comer_rel.dart';
 import 'package:wimob_manager/ui/graf_cli.dart';
+import 'package:wimob_manager/ui/graf_ven.dart';
 
 
 class Comercial extends StatefulWidget {
@@ -123,7 +124,7 @@ class _ComercialState extends State<Comercial> {
                               Navigator.push(
                                   context,
                                   new MaterialPageRoute(
-                                      builder: (context) => new ComerVend()));
+                                      builder: (context) => new GrafVen()));
                             },
                             child: Container(
                               height: 80.0,

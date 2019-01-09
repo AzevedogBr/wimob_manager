@@ -172,6 +172,7 @@ class _AlcadaEletroState extends State<AlcadaEletro>
                   context: context,
                   builder: (context) {
                     return AlertDialog(
+                      
                       contentPadding: const EdgeInsets.all(16.0),
                       title: new Column(
                         children: <Widget>[
