@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:charts_flutter/flutter.dart' as charts;
+//import 'package:charts_flutter/flutter.dart' as charts;
 //import 'package:flutter/rendering.dart';
 
 
@@ -11,11 +11,6 @@ class GrafVen extends StatefulWidget {
 }
 
 class _GrafVenState extends State<GrafVen> {
-  
-    
-
-  
- 
   
   @override
   
@@ -37,8 +32,11 @@ class _GrafVenState extends State<GrafVen> {
           switch (snapshot.connectionState) {
             case ConnectionState.waiting: return new Text('Loading...');
             default:
-              return new ListView(
-                children: snapshot.data.documents.map((DocumentSnapshot document) {
+              return  new charts.BarChart(
+                    seriesList,
+                    animate: animate,
+                  children: snapshot.data.documents.map((DocumentSnapshot document) {
+                  print(document['Vendedor']);
                   return new ListTile(
                     title: new Text(document['Vendedor']),
                     subtitle: new Text(document['Vendas'].toString()),
